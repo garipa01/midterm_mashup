@@ -1,5 +1,5 @@
 "use strict";
-class remotesaver {
+class serversaver {
     constructor(model, key){
         this.key = key
         let self = this
@@ -12,7 +12,7 @@ class remotesaver {
             .then(function(text){
                 return JSON.parse(text)    
             }).then(function(list){self.restoreList(list,model)})
-    }
+    }mereged
     save(list){
         let config = {}
         config.method = "POST"

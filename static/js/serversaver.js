@@ -12,7 +12,7 @@ class serversaver {
             .then(function(text){
                 return JSON.parse(text)    
             }).then(function(list){self.restoreList(list,model)})
-    }mereged
+    }
     save(list){
         let config = {}
         config.method = "POST"

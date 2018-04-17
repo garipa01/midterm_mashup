@@ -4,7 +4,8 @@ function clickedon() {
     let longitude = parseInt(document.getElementById("longitude").value);
     let x = document.getElementById('error')
     if ((latitude <= 90 && latitude >= -90) && (longitude >= -180 && longitude <= 180)){
-        showPosition(latitude,longitude)
+      x.innerHTML = ""
+      showPosition(latitude,longitude)
     }
     else{
         x.innerHTML = "Sorry, please enter a vaild latitude and/or longitude."

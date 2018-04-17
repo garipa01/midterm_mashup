@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/design.css">  
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -15,20 +16,21 @@
             </div>
         </div>
         <div class="row-md-12 form-inline">
-            <label for="location">Location:</label>
-            <input type="text" class="form-control" name="location" id=location/>
+            <label for="latitude">Latitude:</label>
+            <input type="number" class="form-control" id=latitude name="latitude"/>
+            <label for="longitude">Longitude:</label>
+            <input type="number" class="form-control" id=longitude name="longitude"/>
             <button onclick="clickedon()" class="btn btn-success" id=gobutt>Go</button>
         </div> 
     </div>
     <div class="container">
+    <div class = "row-md-12 form-inline" id="error"></div>     
     <div id="map"></div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/model.js"></script>
-    <script type="text/javascript" src="js/serversaver.js"></script>
-    <script type="text/javascript" src="js/view.js"></script>
     <script type="text/javascript" src="js/controller.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwq4ytMdtsgupTSUK9J7LhfqPZQzt4l1E"></script> </script>
   </body>  
 </html>
 

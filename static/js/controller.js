@@ -1,4 +1,4 @@
-
+var infowindow;
 function clickedon() {
     let latitude = parseInt(document.getElementById("latitude").value);
     let longitude = parseInt(document.getElementById("longitude").value);
@@ -37,6 +37,7 @@ function initMap(latitude,longitude, json) {
       center: {lat: latitude, lng: longitude},
       zoom: 7
     });
+    infowindow = new google.maps.InfoWindow()
     try{
     for(var i=0; i<json.page.size; i++) {
       addMarker(map, json._embedded.events[i]);
@@ -52,12 +53,16 @@ function initMap(latitude,longitude, json) {
 
   function addMarker(map, event) {
     if (event._embedded.venues[0].location.latitude != null || event._embedded.venues[0].location.longitude != null){
-    var marker = new google.maps.Marker({
+      var marker = new google.maps.Marker({
       position: new google.maps.LatLng(event._embedded.venues[0].location.latitude, event._embedded.venues[0].location.longitude),
       title: event.name,
       map: map
     });
     marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png');
+    google.maps.event.addListener(marker,'click',function(){
+      infowindow.setContent(event.name);
+      infowindow.open(map,this);
+    });
     console.log(marker);
     }
   }
